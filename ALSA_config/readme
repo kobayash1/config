@@ -1,0 +1,3 @@
+put alsa-base.conf in /etc/modprobe.d/
+
+to keep shit other than the built in sound card from becoming default audio device
