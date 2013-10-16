@@ -1,0 +1,103 @@
+use_xft yes
+xftfont Zekton:size=11
+xftalpha 0.1
+update_interval 2
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 250 5
+maximum_width 1500
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color DimGray
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 25
+gap_y 25
+no_buffers no
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+text_buffer_size 256
+color1 1793D1
+color2 orange
+color3 red
+
+TEXT
+# System Information #
+${color2}System$color $hr
+Operating System $alignr $sysname
+Kernel $alignr $kernel
+Architecture $alignr $machine
+Desktop Environment $alignr ${pre_exec echo $DESKTOP_SESSION}
+Window Manager $alignr ${pre_exec wmctrl -m | grep 'Name' | awk '{print $2}'}
+File System $alignr ${fs_type /home}
+Uptime $alignr ${uptime}
+
+# CPU 1, 2, 3, and 4 Frequency, Temp, and Load #
+${color2}Processing$color $hr
+Manufacturer $alignr Intel
+Core ${goto 60}Freq ${goto 150}Temp $alignr Load
+1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0 temp 2}°C $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0 temp 3}°C $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0 temp 4}°C $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0 temp 5}°C $alignr ${cpu cpu4}%
+
+# GPU stats #
+${color2}Graphics$color $hr
+Manufacturer $alignr Nvidia
+Driver $alignr ${pre_exec nvidia-settings -q [gpu:0]/NvidiaDriverVersion | grep 'Attribute' | awk '{print $4}'}
+GPU Frequency $alignr ${nvidia gpufreq} MHz
+Memory Frequency $alignr ${nvidia memfreq} MHz
+Temperature $alignr ${nvidia temp}°C
+Fan Capacity $alignr ${exec nvidia-smi -q | grep 'Fan Speed' | awk '{print $4}'}%
+Memory $alignr ${exec nvidia-smi -q --display=MEMORY | grep 'Used' | awk '{print $3}'} MB / ${pre_exec nvidia-smi -q --display=MEMORY | grep 'Total' | awk '{print $3}'} MB
+
+# Fan stats #
+${color2}Cooling$color $hr
+CPU $alignr ${platform nct6775.656 fan 2} RPM
+Front Intake $alignr ${platform nct6775.656 fan 3} RPM
+Rear Exhaust $alignr ${platform nct6775.656 fan 4} RPM
+Top Exhaust $alignr ${platform nct6775.656 fan 1} RPM
+
+# RAM stats #
+${color2}Memory$color $hr
+RAM $alignr ${mem} / ${memmax}
+
+# HDD stats #
+${color2}Storage$color $hr
+/ $alignr ${fs_used /} / ${fs_size /}
+/home $alignr ${fs_used /home} / ${fs_size /home}
+Temperature $alignr ${hddtemp /dev/sda}°C
+
+# Network stats #
+${color2}Network$color $hr
+Local IP $alignr ${addr eno1}
+Up $alignr ${upspeed eno1}
+Down $alignr ${downspeed eno1}
+
+# Processes #
+${color2}Processes$color $hr
+$alignr Processing
+${top name 1} $alignr ${top cpu 1}%
+${top name 2} $alignr ${top cpu 2}%
+${top name 3} $alignr ${top cpu 3}%
+${top name 4} $alignr ${top cpu 4}%
+${top name 5} $alignr ${top cpu 5}%
+$alignr Memory
+${top_mem name 1} $alignr ${top_mem mem 1}%
+${top_mem name 2} $alignr ${top_mem mem 2}%
+${top_mem name 3} $alignr ${top_mem mem 3}%
+${top_mem name 4} $alignr ${top_mem mem 4}%
+${top_mem name 5} $alignr ${top_mem mem 5}%
+
+# Arch Linux News #
+${color2}Arch News$color $hr
+${rss https://www.archlinux.org/feeds/news/ 60 item_titles 3}
