@@ -1,0 +1,4 @@
+put this file in ~/.config/openbox to add Ctrl+Alt+t shortcut to open lxterminal and PrntScr 
+screenshot hotkey (remember to install imagemagick)
+
+cp lxde-rc.xml ~/.config/openbox
