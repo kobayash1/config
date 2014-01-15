@@ -2,35 +2,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <opml version="1.0">
   <head>
-    <dateCreated>Mon, 14 Oct 2013 01:33:49 +0000</dateCreated>
+    <dateCreated>Wed, 15 Jan 2014 03:27:12 +0000</dateCreated>
     <title>Tiny Tiny RSS Feed Export</title>
   </head>
   <body>
+    <outline type="rss" text="Android Central - Android Forums - News - Reviews - Help and Android Wallpapers" xmlUrl="http://www.androidcentral.com/rss.xml" htmlUrl="http://www.androidcentral.com/"/>
+    <outline type="rss" text="Android Police - Android News, Apps, Games, Phones, Tablets" xmlUrl="http://feeds.feedburner.com/AndroidPolice" htmlUrl="http://www.androidpolice.com"/>
     <outline type="rss" text="Animenz' Piano Sheets" xmlUrl="http://animenz.wordpress.com/feed/" htmlUrl="http://animenz.wordpress.com"/>
     <outline type="rss" text="Arch Linux: Recent news updates" xmlUrl="http://www.archlinux.org/feeds/news/" htmlUrl="https://www.archlinux.org/news/"/>
-    <outline type="rss" text="Avoiding the Puddle" xmlUrl="http://www.avoidingthepuddle.com/news/rss.xml" htmlUrl="http://www.avoidingthepuddle.com/news/"/>
+    <outline type="rss" text="Ars Technica" xmlUrl="http://feeds.arstechnica.com/arstechnica/index" htmlUrl="http://arstechnica.com"/>
     <outline type="rss" text="Awful Announcing" xmlUrl="http://www.awfulannouncing.com/feed.html" htmlUrl="http://www.awfulannouncing.com/"/>
+    <outline type="rss" text="Beats in Space" xmlUrl="http://www.beatsinspace.net/rss.xml" htmlUrl="http://www.beatsinspace.net/rss.xml"/>
     <outline type="rss" text="cplcrud" xmlUrl="http://cplcrud.wordpress.com/feed/" htmlUrl="http://cplcrud.wordpress.com"/>
-    <outline type="rss" text="D3vlicious" xmlUrl="http://www.d3vlicious.com/home/rss.xml" htmlUrl="http://www.d3vlicious.com/home/"/>
     <outline type="rss" text="Deadspin" xmlUrl="http://feeds.gawker.com/deadspin/full" htmlUrl="http://deadspin.com"/>
-    <outline type="rss" text="ElvenShadow Blog" xmlUrl="http://elvenshadowmike.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://elvenshadowmike.blogspot.com/"/>
     <outline type="rss" text="EventHubs" xmlUrl="http://www.eventhubs.com/feeds/latest/" htmlUrl="http://www.eventhubs.com"/>
-    <outline type="rss" text="Hsien's Blog" xmlUrl="http://hsiensf.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://hsiensf.blogspot.com/feeds/posts/"/>
     <outline type="rss" text="iPLAYWINNER" xmlUrl="http://iplaywinner.com/news/rss.xml" htmlUrl="http://iplaywinner.com/news/"/>
+    <outline type="rss" text="Linux.com - All Content" xmlUrl="http://www.linux.com/feeds/all-content" htmlUrl="http://www.linux.com/feeds/"/>
+    <outline type="rss" text="LinuxGizmos" xmlUrl="http://linuxgizmos.com/feed" htmlUrl="http://linuxgizmos.com"/>
     <outline type="rss" text="Lovers Arcana Yamada Lvl99" xmlUrl="http://loversyamada.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://loversyamada.blogspot.com/"/>
+    <outline type="rss" text="LWN.net" xmlUrl="http://lwn.net/headlines/rss" htmlUrl="http://lwn.net"/>
     <outline type="rss" text="Melty Bread" xmlUrl="http://www.meltybread.com/feed/" htmlUrl="http://www.meltybread.com"/>
     <outline type="rss" text="Mizuumi.net" xmlUrl="http://mizuumi.net/feed/" htmlUrl="http://mizuumi.net"/>
     <outline type="rss" text="OCRemix" xmlUrl="http://www.ocremix.org/feeds/ten20/" htmlUrl="http://www.ocremix.org"/>
-    <outline type="rss" text="Option-Select.com News" xmlUrl="http://www.option-select.com/feed/" htmlUrl="http://www.option-select.com"/>
     <outline type="rss" text="Phoronix" xmlUrl="http://feeds.feedburner.com/Phoronix" htmlUrl="http://www.phoronix.com/"/>
-    <outline type="rss" text="Protocol Snow" xmlUrl="http://www.protocolsnow.com/feed/" htmlUrl="http://www.protocolsnow.com"/>
-    <outline type="rss" text="Shadowloo" xmlUrl="http://www.shadowloo.com/?feed=rss2" htmlUrl="http://www.shadowlogic.com.au"/>
-    <outline type="rss" text="Sherryjenix" xmlUrl="http://sherryjenix.com/feed/" htmlUrl="http://sherryjenix.com"/>
+    <outline type="rss" text="RA Podcast" xmlUrl="http://www.residentadvisor.net/xml/podcast.xml" htmlUrl="http://www.residentadvisor.net"/>
     <outline type="rss" text="Shoryuken" xmlUrl="http://shoryuken.com/feed/" htmlUrl="http://shoryuken.com"/>
     <outline type="rss" text="Sirlin" xmlUrl="http://www.sirlin.net/blog/rss.xml" htmlUrl="http://www.sirlin.net/blog/"/>
+    <outline type="rss" text="Slashdot" xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
     <outline type="rss" text="sonic hurricane dot com" xmlUrl="http://sonichurricane.com/?feed=rss2" htmlUrl="http://sonichurricane.com"/>
-    <outline type="rss" text="Thinkbox" xmlUrl="http://rollthewords.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://rollthewords.blogspot.com/"/>
     <outline type="rss" text="Versus City" xmlUrl="http://www.versuscity.net/feed/" htmlUrl="http://www.versuscity.net"/>
+    <outline type="rss" text="xda-developers" xmlUrl="http://feeds.feedburner.com/xda-developers/ShsH" htmlUrl="http://www.xda-developers.com"/>
     <outline type="rss" text="Xenozip's Notes" xmlUrl="http://xenozipnotes.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://xenozipnotes.blogspot.com/"/>
     <outline type="rss" text="Youtube" xmlUrl="http://gdata.youtube.com/feeds/base/users/xtremexj220/newsubscriptionvideos" htmlUrl="http://gdata.youtube.com/feeds/base/users/xtremexj220/"/>
     <outline type="rss" text="うたわれるもの" xmlUrl="http://romancancel.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://romancancel.blogspot.com/"/>
@@ -47,7 +48,7 @@
       <outline pref-name="DIGEST_CATCHUP" value="false"/>
       <outline pref-name="DIGEST_ENABLE" value="false"/>
       <outline pref-name="DIGEST_PREFERRED_TIME" value="00:00"/>
-      <outline pref-name="ENABLE_API_ACCESS" value="false"/>
+      <outline pref-name="ENABLE_API_ACCESS" value="true"/>
       <outline pref-name="ENABLE_FEED_CATS" value="true"/>
       <outline pref-name="FEEDS_SORT_BY_UNREAD" value="false"/>
       <outline pref-name="FRESH_ARTICLE_MAX_AGE" value="24"/>
@@ -75,7 +76,7 @@
       <outline pref-name="_COLLAPSED_UNCAT" value="false"/>
       <outline pref-name="_DEFAULT_INCLUDE_CHILDREN" value="false"/>
       <outline pref-name="_DEFAULT_VIEW_LIMIT" value="30"/>
-      <outline pref-name="_DEFAULT_VIEW_MODE" value="adaptive"/>
+      <outline pref-name="_DEFAULT_VIEW_MODE" value="all_articles"/>
       <outline pref-name="_DEFAULT_VIEW_ORDER_BY" value="default"/>
       <outline pref-name="_ENABLED_PLUGINS" value=""/>
       <outline pref-name="_MOBILE_BROWSE_CATS" value="true"/>
