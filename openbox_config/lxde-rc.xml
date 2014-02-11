@@ -313,6 +313,12 @@
         <command>/home/kobayashi/Scripts/shoot.sh</command>
       </action>
     </keybind>
+    <!-- Screenshot and upload to imgur -->
+    <keybind key="C-Print">
+      <action name="Execute">
+        <command>/home/kobayashi/Scripts/imgur.sh</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
