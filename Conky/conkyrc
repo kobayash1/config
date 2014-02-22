@@ -26,6 +26,7 @@ cpu_avg_samples 2
 net_avg_samples 1
 override_utf8_locale yes
 text_buffer_size 256
+maximum_width 300
 color1 1793D1
 color2 orange
 color3 ADFF2F
@@ -63,10 +64,10 @@ grep -A 2 'FB\ Memory\ Usage' | grep 'Total' | awk '{print $3}'} MB
 
 # Fan stats #
 ${color3}Cooling$color $hr
-CPU $alignr ${platform nct6775.656 fan 2} RPM
-Front Intake $alignr ${platform nct6775.656 fan 3} RPM
-Rear Exhaust $alignr ${platform nct6775.656 fan 4} RPM
-Top Exhaust $alignr ${platform nct6775.656 fan 1} RPM
+CPU $alignr ${platform nct6775.656/hwmon/hwmon4 fan 2} RPM
+Front Intake $alignr ${platform nct6775.656/hwmon/hwmon4 fan 3} RPM
+Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon4 fan 4} RPM
+Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon4 fan 1} RPM
 
 # RAM stats #
 ${color3}Memory$color $hr
