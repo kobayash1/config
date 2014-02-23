@@ -27,13 +27,14 @@ net_avg_samples 1
 override_utf8_locale yes
 text_buffer_size 256
 maximum_width 300
-color1 1793D1
+color1 33b5e5
 color2 orange
 color3 ADFF2F
+color4 1793D1
 
 TEXT
 # System Information #
-${color3}System$color $hr
+${color1}System$color $hr
 Operating System $alignr $sysname
 Kernel $alignr $kernel
 Architecture $alignr $machine
@@ -43,7 +44,7 @@ File System $alignr ${fs_type /home}
 Uptime $alignr ${uptime}
 
 # CPU 1, 2, 3, and 4 Frequency, Temp, and Load #
-${color3}Processing$color $hr
+${color1}Processing$color $hr
 Manufacturer $alignr Intel
 Core ${goto 60}Freq ${goto 150}Temp $alignr Load
 1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0 temp 2}°C $alignr ${cpu cpu1}%
@@ -52,7 +53,7 @@ Core ${goto 60}Freq ${goto 150}Temp $alignr Load
 4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0 temp 5}°C $alignr ${cpu cpu4}%
 
 # GPU stats #
-${color3}Graphics$color $hr
+${color1}Graphics$color $hr
 Manufacturer $alignr Nvidia
 Driver $alignr ${pre_exec nvidia-settings -q [gpu:0]/NvidiaDriverVersion | grep 'Attribute' | awk '{print $4}'}
 GPU Frequency $alignr ${nvidia gpufreq} MHz
@@ -63,30 +64,30 @@ Memory $alignr ${exec nvidia-smi -q --display=MEMORY | grep -A 2 'FB\ Memory\ Us
 grep -A 2 'FB\ Memory\ Usage' | grep 'Total' | awk '{print $3}'} MB
 
 # Fan stats #
-${color3}Cooling$color $hr
+${color1}Cooling$color $hr
 CPU $alignr ${platform nct6775.656/hwmon/hwmon4 fan 2} RPM
 Front Intake $alignr ${platform nct6775.656/hwmon/hwmon4 fan 3} RPM
 Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon4 fan 4} RPM
 Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon4 fan 1} RPM
 
 # RAM stats #
-${color3}Memory$color $hr
+${color1}Memory$color $hr
 RAM $alignr ${mem} / ${memmax}
 
 # HDD stats #
-${color3}Storage$color $hr
+${color1}Storage$color $hr
 / $alignr ${fs_used /} / ${fs_size /}
 /home $alignr ${fs_used /home} / ${fs_size /home}
 Temperature $alignr ${hddtemp /dev/sda}°C
 
 # Network stats #
-${color3}Network$color $hr
+${color1}Network$color $hr
 Local IP $alignr ${addr eno1}
 Up $alignr ${upspeed eno1}
 Down $alignr ${downspeed eno1}
 
 # Processes #
-${color3}Processes$color $hr
+${color1}Processes$color $hr
 $alignr Processing
 ${top name 1} $alignr ${top cpu 1}%
 ${top name 2} $alignr ${top cpu 2}%
@@ -101,5 +102,5 @@ ${top_mem name 4} $alignr ${top_mem mem 4}%
 ${top_mem name 5} $alignr ${top_mem mem 5}%
 
 # Arch Linux News #
-${color3}Arch News$color $hr
+${color1}Arch News$color $hr
 ${rss https://www.archlinux.org/feeds/news/ 60 item_titles 3}
