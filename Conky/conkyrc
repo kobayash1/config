@@ -5,7 +5,8 @@ update_interval 2
 total_run_times 0
 own_window yes
 own_window_type normal
-own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 0
 own_window_hints undecorated,below,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 250 5
@@ -65,10 +66,10 @@ grep -A 2 'FB\ Memory\ Usage' | grep 'Total' | awk '{print $3}'} MB
 
 # Fan stats #
 ${color1}Cooling$color $hr
-CPU $alignr ${platform nct6775.656/hwmon/hwmon4 fan 2} RPM
-Front Intake $alignr ${platform nct6775.656/hwmon/hwmon4 fan 3} RPM
-Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon4 fan 4} RPM
-Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon4 fan 1} RPM
+CPU $alignr ${platform nct6775.656/hwmon/hwmon3 fan 2} RPM
+Front Intake $alignr ${platform nct6775.656/hwmon/hwmon3 fan 3} RPM
+Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 4} RPM
+Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 1} RPM
 
 # RAM stats #
 ${color1}Memory$color $hr
