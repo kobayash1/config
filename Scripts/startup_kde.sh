@@ -1,10 +1,11 @@
 #!/bin/bash
-sleep 15 &&
+sleep 20 &&
 conky &
 konsole -e irssi &
 skype &
 sleep 30 &&
-(wmctrl -r "konsole" -t 2);(wmctrl -r "konsole" -b add,maximized_vert,maximized_horz)
+(wmctrl -r "irssi" -t 2);(wmctrl -r "irssi" -b toggle,fullscreen)
 sleep 40 &&
-wmctrl -r "skype" -t 1
-wmctrl -r "conky" -t 3
+wmctrl -r "skype" -t 1 &
+konsole &
+(wmctrl -r "bash" -t 3);(wmctrl -r "bash" -b toggle,fullscreen)
