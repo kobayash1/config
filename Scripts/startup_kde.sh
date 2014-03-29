@@ -9,3 +9,4 @@ sleep 30 &&
 (wmctrl -r "bash" -t 3);(wmctrl -r "bash" -b toggle,fullscreen)
 sleep 40 &&
 wmctrl -r "skype" -t 1 &
+killall kwalletd &
