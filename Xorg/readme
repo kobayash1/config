@@ -1,0 +1,1 @@
+Place "xorg.conf" into /etc/X11/ with 644 permissions, owned by root.
