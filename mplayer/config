@@ -1,0 +1,6 @@
+# Write your default config options here!
+
+
+ass=yes
+nolirc=yes
+quiet=yes
