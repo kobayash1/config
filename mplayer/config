@@ -4,3 +4,4 @@
 ass=yes
 nolirc=yes
 quiet=yes
+vf=screenshot
