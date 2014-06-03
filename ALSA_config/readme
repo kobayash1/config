@@ -1,3 +1,7 @@
 put alsa-base.conf in /etc/modprobe.d/
 
 to keep shit other than the built in sound card from becoming default audio device
+
+
+asoundrc must be named .asoundrc in the ~/ folder.  This is an experimental asoundrc file for 
+use with SimpleScreenRecorder to record sound output using only alsa.
