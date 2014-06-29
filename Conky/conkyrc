@@ -48,10 +48,10 @@ Uptime $alignr ${uptime}
 ${color1}Processing$color $hr
 Manufacturer $alignr Intel
 Core ${goto 60}Freq ${goto 150}Temp $alignr Load
-1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0 temp 2}°C $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0 temp 3}°C $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0 temp 4}°C $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0 temp 5}°C $alignr ${cpu cpu4}%
+1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 2}°C $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 3}°C $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 4}°C $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 5}°C $alignr ${cpu cpu4}%
 
 # GPU stats #
 ${color1}Graphics$color $hr
