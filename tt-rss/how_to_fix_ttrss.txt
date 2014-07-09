@@ -1,0 +1,9 @@
+I had this problem updating my multiuser installation from 1.3.3 to 1.4.3 just now. My access_level was 5 and it needed to be 10.
+
+Documenting specifically what I did to help anybody in the future who isn't mysql savvy:
+mysql -u <sqluser> -p <dbname>
+Password: <sqlpasswd>
+update ttrss_users set access_level=10 where login = '<ttuser>';
+exit
+
+Where <sqluser> and <sqlpasswd> and <dbname> are specified as DB_USER and DB_PASS and DB_NAME in config.php and <ttuser> is the account name used to log into tt-rss.
