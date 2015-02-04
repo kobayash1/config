@@ -124,4 +124,4 @@ ${top_mem name 5} $alignr ${top_mem mem 5}%
 ${color1}Arch News$color $hr
 ${rss https://www.archlinux.org/feeds/news/ 60 item_titles 3}
 
-$time
+${color1}${font Zekton:size=28}${time %F %R}
