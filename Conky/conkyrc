@@ -1,5 +1,5 @@
 use_xft yes
-xftfont Zekton:size=11
+xftfont Zekton:size=12
 xftalpha 0.1
 update_interval 2
 total_run_times 0
@@ -39,14 +39,11 @@ ${color1}System$color $hr
 Operating System $alignr $sysname
 Kernel $alignr $kernel
 Architecture $alignr $machine
-Desktop Environment $alignr ${pre_exec echo $DESKTOP_SESSION}
-Window Manager $alignr ${pre_exec wmctrl -m | grep 'Name' | awk '{print $2}'}
 File System $alignr ${fs_type /home}
 Uptime $alignr ${uptime}
 
 # CPU 1, 2, 3, and 4 Frequency, Temp, and Load #
 ${color1}Processing$color $hr
-Manufacturer $alignr Intel
 Core ${goto 60}Freq ${goto 150}Temp $alignr Load
 ${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 2}°C $alignr ${cpu cpu1}%
 2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 3}°C $alignr ${cpu cpu2}%
@@ -61,17 +58,6 @@ ${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input}1  ${got
 2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 3}°C $alignr ${cpu cpu2}%
 3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 4}°C $alignr ${cpu cpu3}%
 4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 5}°C $alignr ${cpu cpu4}%${endif}
-
-# GPU stats #
-${color1}Graphics$color $hr
-Manufacturer $alignr Nvidia
-Driver $alignr ${pre_exec nvidia-settings -q [gpu:0]/NvidiaDriverVersion | grep 'Attribute' | awk '{print $4}'}
-GPU Frequency $alignr ${nvidia gpufreq} MHz
-Memory Frequency $alignr ${nvidia memfreq} MHz
-Temperature $alignr ${nvidia temp}°C
-Fan Capacity $alignr ${exec nvidia-smi -q | grep 'Fan Speed' | awk '{print $4}'}%
-Memory $alignr ${exec nvidia-smi -q --display=MEMORY | grep -A 2 'FB\ Memory\ Usage' | grep 'Used' | awk '{print $3}'} MB / ${pre_exec nvidia-smi -q --display=MEMORY | 
-grep -A 2 'FB\ Memory\ Usage' | grep 'Total' | awk '{print $3}'} MB
 
 # Fan stats #
 ${color1}Cooling$color $hr
@@ -101,9 +87,9 @@ I/O $alignr ${diskio /dev/sdb}
 
 # Network stats #
 ${color1}Network$color $hr
-Local IP $alignr ${addr eno1}
-Up $alignr ${upspeed eno1}
-Down $alignr ${downspeed eno1}
+Local IP $alignr ${addr wlp6s0}
+Up $alignr ${upspeed wlp6s0}
+Down $alignr ${downspeed wlp6s0}
 
 # Processes #
 ${color1}Processes$color $hr
@@ -123,5 +109,13 @@ ${top_mem name 5} $alignr ${top_mem mem 5}%
 # Arch Linux News #
 ${color1}Arch News$color $hr
 ${rss https://www.archlinux.org/feeds/news/ 60 item_titles 3}
+
+# Arch Linux Updates Available #
+${color1}Updates Available$color $hr
+pacman $alignr ${execpi 3600 checkupdates | wc -l}
+
+# mpd #
+${color1}Now Playing$color $hr
+${mpd_smart}
 
 ${color1}${font Zekton:size=28}${time %F %R}
