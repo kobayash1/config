@@ -7,11 +7,12 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-PATH=$PATH:~/.gem/ruby/2.1.0/bin/
+PATH=$PATH:~/.gem/ruby/2.1.0/bin/:~/Scripts/
 alias music='/home/kobayashi/Scripts/music.sh'
 alias gitpass='/home/kobayashi/gitpass.sh'
-alias kpop='/home/kobayashi/Scripts/kpop.sh'
 alias updatekpop='/home/kobayashi/Scripts/update_kpop.sh'
-alias pause='mpc toggle'
 alias p='mpc toggle'
 alias kpopcount='/home/kobayashi/Scripts/kpop_count.sh'
+alias lenny='/home/kobayashi/Scripts/lenny.sh'
+alias n='mpc next'
+alias go='sudo systemctl start sddm'
