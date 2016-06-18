@@ -1,5 +1,3 @@
 #!/bin/bash
-conky &
 xbindkeys -f ~/.xbindkeysrc &
 mpd &&
-updatekpop

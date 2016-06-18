@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -vhzr --delete --ignore-existing ~/Music/K-Pop/ /run/media/kobayashi/SANSA\ CLIPP/k-pop/

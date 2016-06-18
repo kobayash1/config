@@ -8,6 +8,4 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 PATH=$PATH:~/.gem/ruby/2.1.0/bin/:~/Scripts/
-alias p='mpc toggle'
-alias n='mpc next'
-alias go='sudo systemctl start sddm'
+export QUOTING_STYLE=literal

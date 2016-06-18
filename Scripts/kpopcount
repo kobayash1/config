@@ -1,2 +1,2 @@
 #!/bin/bash
-find /home/kobayashi/Music/K-Pop/ -type f | wc -l
+find /home/kobayashi/Music/K-Pop/ -type f -iregex '.*\(flac\|mp3\|ogg\|wav\)' | wc -l
