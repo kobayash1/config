@@ -1,0 +1,11 @@
+# Next track in mpc
+"mpc next"
+	m:0x18 + c:60
+
+# Previous track in mpc
+"mpc prev"
+	m:0x18 + c:59
+
+# Play/Pause mpc
+"mpc toggle"
+	XF86AudioPlay
