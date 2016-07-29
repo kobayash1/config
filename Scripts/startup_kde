@@ -1,9 +1,0 @@
-#!/bin/bash
-sleep 60 &&
-conky &
-konsole -e irssi &
-konsole &
-sleep 5 &&
-(wmctrl -r "irssi" -t 2);(wmctrl -r "irssi" -b toggle,fullscreen)
-(wmctrl -r "bash" -t 3);(wmctrl -r "bash" -b toggle,fullscreen)
-killall kwalletd &
