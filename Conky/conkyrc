@@ -29,7 +29,7 @@ conky.config = {
 	net_avg_samples = 1,
 	override_utf8_locale = true,
 	text_buffer_size = 1024,
-	color1 = '33b5e5',
+	color1 = '3DAEE9',
 	color2 = 'orange',
 	color3 = 'ADFF2F',
 	color4 = '1793D1',
@@ -60,6 +60,7 @@ ${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input}1  ${got
 2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 3}°C $alignr ${cpu cpu2}%
 3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 4}°C $alignr ${cpu cpu3}%
 4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 5}°C $alignr ${cpu cpu4}%${endif}
+GPU ${goto 60}${nvidia gpufreqcur} MHz ${goto 150}${nvidia gputemp}°C $alignr ${nvidia gpuutil}%
 # Fan stats #
 ${color1}Cooling$color $hr
 ${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon0/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon0 fan 2} RPM
@@ -78,6 +79,7 @@ Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 1} RPM${endif}
 # RAM stats #
 ${color1}Memory$color $hr
 RAM $alignr ${mem} / ${memmax}
+Video RAM $alignr ${nvidia mem}MiB / ${nvidia memtotal}MiB
 # HDD stats #
 ${color1}Storage$color $hr
 / $alignr ${fs_used /} / ${fs_size /}
