@@ -11,8 +11,9 @@ conky.config = {
 	own_window_argb_value = 0,
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	double_buffer = true,
-	maximum_width = 1500,
 	max_text_width = 0,
+	minimum_width = 250,
+	maximum_width = 250,
 	draw_shades = false,
 	draw_outline = false,
 	draw_borders = false,
@@ -88,8 +89,8 @@ I/O $alignr ${diskio /dev/sdb}
 # Network stats #
 ${color1}Network$color $hr
 Local IP $alignr ${addr wlp6s0}
-Up $alignr ${upspeed wlp6s0}
-Down $alignr ${downspeed wlp6s0}
+Up${goto 60}${upspeedgraph wlp6s0 25,140 000000 00BB00 -l -t}${alignr}${upspeed wlp6s0} 
+Down${goto 60}${downspeedgraph wlp6s0 25,140 000000 BB0000 -l -t}${alignr}${downspeed wlp6s0}
 # Processes #
 ${color1}Processes$color $hr
 $alignr Processing
@@ -107,9 +108,6 @@ ${top_mem name 5} $alignr ${top_mem mem 5}%
 # Arch Linux News #
 ${color1}Arch News$color $hr
 ${rss https://www.archlinux.org/feeds/news/ 60 item_titles 3}
-# Arch Linux Updates Available #
-${color1}Updates Available$color $hr
-pacman $alignr ${execpi 3600 checkupdates | wc -l}
 # mpd #
 ${color1}Now Playing$color $hr
 ${mpd_smart}
