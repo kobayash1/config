@@ -34,49 +34,49 @@ conky.config = {
 	color2 = 'orange',
 	color3 = 'ADFF2F',
 	color4 = '1793D1',
+	temperature_unit = 'fahrenheit'
 
 }
 
 conky.text = [[
 # System Information #
 ${color1}System$color $hr
-Operating System $alignr $sysname
-Kernel $alignr $kernel
+$sysname}$alignr $kernel
 Architecture $alignr $machine
 File System $alignr ${fs_type /home}
 Uptime $alignr ${uptime}
 # CPU 1, 2, 3, and 4 Frequency, Temp, and Load #
 ${color1}Processing$color $hr
-Core ${goto 60}Freq ${goto 150}Temp $alignr Load
+Core ${goto 60}Freq ${goto 150}Temp (°F) $alignr Load
 ${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 2}°C $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 3}°C $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 4}°C $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 5}°C $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 2}°C $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 3}°C $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 4}°C $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 5}°C $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 2}°C $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 3}°C $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 4}°C $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 5}°C $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 2}°C $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 3}°C $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 4}°C $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 5}°C $alignr ${cpu cpu4}%${endif}
+2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 2}temp $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 2} $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 2} $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 5} $alignr ${cpu cpu4}%${endif}
 GPU ${goto 60}${nvidia gpufreqcur} MHz ${goto 150}${nvidia gputemp}°C $alignr ${nvidia gpuutil}%
 # Fan stats #
-${color1}Cooling$color $hr
-${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon0/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon0 fan 2} RPM
-Front Intake $alignr ${platform nct6775.656/hwmon/hwmon0 fan 3} RPM
-Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon0 fan 4} RPM
-Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon0 fan 1} RPM${endif}${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon1/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon1 fan 2} RPM
-Front Intake $alignr ${platform nct6775.656/hwmon/hwmon1 fan 3} RPM
-Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon1 fan 4} RPM
-Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon1 fan 1} RPM${endif}${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon2/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon2 fan 2} RPM
-Front Intake $alignr ${platform nct6775.656/hwmon/hwmon2 fan 3} RPM
-Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon2 fan 4} RPM
-Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon2 fan 1} RPM${endif}${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon3/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon3 fan 2} RPM
-Front Intake $alignr ${platform nct6775.656/hwmon/hwmon3 fan 3} RPM
-Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 4} RPM
-Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 1} RPM${endif}
+${color1}Fans$color $hr 
+${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon0/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon0 fan 2} 
+Front Intake $alignr ${platform nct6775.656/hwmon/hwmon0 fan 3} 
+Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon0 fan 4} 
+Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon0 fan 1} ${endif}${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon1/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon1 fan 2} 
+Front Intake $alignr ${platform nct6775.656/hwmon/hwmon1 fan 3} 
+Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon1 fan 4} 
+Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon1 fan 1} ${endif}${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon2/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon2 fan 2} 
+Front Intake $alignr ${platform nct6775.656/hwmon/hwmon2 fan 3} 
+Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon2 fan 4} 
+Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon2 fan 1} ${endif}${if_existing /sys/devices/platform/nct6775.656/hwmon/hwmon3/fan1_input}CPU $alignr ${platform nct6775.656/hwmon/hwmon3 fan 2} 
+Front Intake $alignr ${platform nct6775.656/hwmon/hwmon3 fan 3} 
+Rear Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 4} 
+Top Exhaust $alignr ${platform nct6775.656/hwmon/hwmon3 fan 1} ${endif}
 # RAM stats #
 ${color1}Memory$color $hr
 RAM $alignr ${mem} / ${memmax}
@@ -88,9 +88,9 @@ ${color1}Storage$color $hr
 I/O $alignr ${diskio /dev/sdb}
 # Network stats #
 ${color1}Network$color $hr
-Local IP $alignr ${addr wlp6s0}
-Up${goto 60}${upspeedgraph wlp6s0 25,140 000000 00BB00 -l -t}${alignr}${upspeed wlp6s0} 
-Down${goto 60}${downspeedgraph wlp6s0 25,140 000000 BB0000 -l -t}${alignr}${downspeed wlp6s0}
+Local IP $alignr ${addr eno1}
+Up${goto 60}${upspeedgraph eno1 25,140 000000 00BB00 -l -t}${alignr}${upspeed eno1} 
+Down${goto 60}${downspeedgraph eno1 25,140 000000 BB0000 -l -t}${alignr}${downspeed eno1}
 # Processes #
 ${color1}Processes$color $hr
 $alignr Processing
@@ -105,10 +105,13 @@ ${top_mem name 2} $alignr ${top_mem mem 2}%
 ${top_mem name 3} $alignr ${top_mem mem 3}%
 ${top_mem name 4} $alignr ${top_mem mem 4}%
 ${top_mem name 5} $alignr ${top_mem mem 5}%
-# Arch Linux News #
-${color1}Arch News$color $hr
-${rss https://www.archlinux.org/feeds/news/ 60 item_titles 3}
 # mpd #
 ${color1}Now Playing$color $hr
 ${mpd_smart}
+# Arch Linux News #
+${color1}Arch News$color $hr
+${rss https://www.archlinux.org/feeds/news/ 60 item_titles 1}
+# Weather #
+${color1}Weather$color $hr
+NOAA report as of ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ KORD last_update}$alignr${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ KORD temperature}°F
 ]]
