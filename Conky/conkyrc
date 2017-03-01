@@ -47,20 +47,20 @@ File System $alignr ${fs_type /home}
 Uptime $alignr ${uptime}
 # CPU 1, 2, 3, and 4 Frequency, Temp, and Load #
 ${color1}Processing$color $hr
-Core ${goto 60}Freq ${goto 150}Temp (°F) $alignr Load
-${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 2}°C $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 3} $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 4} $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 2}temp $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 3} $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 4} $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 2} $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 3} $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 4} $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input}1  ${goto 60}${freq_g cpu1} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 2} $alignr ${cpu cpu1}%
-2  ${goto 60}${freq_g cpu2} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 3} $alignr ${cpu cpu2}%
-3  ${goto 60}${freq_g cpu3} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 4} $alignr ${cpu cpu3}%
-4  ${goto 60}${freq_g cpu4} GHz ${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 5} $alignr ${cpu cpu4}%${endif}
+Core ${goto 60}Freq (GHz)${goto 150}Temp (°F) $alignr Load
+${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input}1  ${goto 60}${freq_g cpu1}${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 2}°C $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2}${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3}${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4}${goto 150}${platform coretemp.0/hwmon/hwmon0 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input}1  ${goto 60}${freq_g cpu1}${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 2}temp $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2}${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3}${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4}${goto 150}${platform coretemp.0/hwmon/hwmon1 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input}1  ${goto 60}${freq_g cpu1}${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 2} $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2}${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3}${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4}${goto 150}${platform coretemp.0/hwmon/hwmon2 temp 5} $alignr ${cpu cpu4}%${endif}${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input}1  ${goto 60}${freq_g cpu1}${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 2} $alignr ${cpu cpu1}%
+2  ${goto 60}${freq_g cpu2}${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 3} $alignr ${cpu cpu2}%
+3  ${goto 60}${freq_g cpu3}${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 4} $alignr ${cpu cpu3}%
+4  ${goto 60}${freq_g cpu4}${goto 150}${platform coretemp.0/hwmon/hwmon3 temp 5} $alignr ${cpu cpu4}%${endif}
 GPU ${goto 60}${nvidia gpufreqcur} MHz ${goto 150}${nvidia gputemp}°C $alignr ${nvidia gpuutil}%
 # Fan stats #
 ${color1}Fans$color $hr 
