@@ -34,7 +34,8 @@ conky.config = {
 	color2 = 'orange',
 	color3 = 'ADFF2F',
 	color4 = '1793D1',
-	temperature_unit = 'fahrenheit'
+	temperature_unit = 'fahrenheit',
+	if_up_strictness = 'address'
 
 }
 
@@ -88,9 +89,13 @@ ${color1}Storage$color $hr
 I/O $alignr ${diskio /dev/sdb}
 # Network stats #
 ${color1}Network$color $hr
+${if_up eno1}Interface $alignr eno1
 Local IP $alignr ${addr eno1}
 Up${goto 60}${upspeedgraph eno1 25,140 000000 00BB00 -l -t}${alignr}${upspeed eno1} 
-Down${goto 60}${downspeedgraph eno1 25,140 000000 BB0000 -l -t}${alignr}${downspeed eno1}
+Down${goto 60}${downspeedgraph eno1 25,140 000000 BB0000 -l -t}${alignr}${downspeed eno1}${endif}${if_up wlp6s0}Interface $alignr wlp6s0
+Local IP $alignr ${addr wlp6s0}
+Up${goto 60}${upspeedgraph wlp6s0 25,140 000000 00BB00 -l -t}${alignr}${upspeed wlp6s0} 
+Down${goto 60}${downspeedgraph wlp6s0 25,140 000000 BB0000 -l -t}${alignr}${downspeed wlp6s0}${endif}
 # Processes #
 ${color1}Processes$color $hr
 $alignr Processing
