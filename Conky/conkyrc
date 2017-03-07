@@ -42,8 +42,7 @@ conky.config = {
 conky.text = [[
 # System Information #
 ${color1}System$color $hr
-$sysname}$alignr $kernel
-Architecture $alignr $machine
+$sysname}$alignr ${kernel}-${machine}
 File System $alignr ${fs_type /home}
 Uptime $alignr ${uptime}
 # CPU 1, 2, 3, and 4 Frequency, Temp, and Load #
