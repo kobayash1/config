@@ -1,11 +1,6 @@
 #!/bin/bash
-if [ -n "$1" ]; then
-	re='^[0-9]+$'
-	if ! [[ $1 =~ $re ]] ; then
-		echo "error: Value specified is not an integer" >&2; exit 1
-		fi
-	echo "Creating shuffled playlist of '$1' newest kpop tracks"
-	newkpopmpd $1
-	else echo "No number of recent tracks specified, creating shuffled playlist of 10 newest kpop tracks"
-	newkpopmpd 10
-	fi
+mpc stop
+find ~/Music/K-Pop/ -type f -printf "%T+\t%p\n" | sort | tail -$1 | cut -c 32- > ~/.config/mpd/playlists/newkpop.m3u
+mpc clear
+mpc load newkpop
+mpc shuffle
