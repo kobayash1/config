@@ -1,0 +1,10 @@
+JBL LSR305
+volume pots set at 4.5
+approx 78.5 dB using -20dBfs pink noise wav file with approx 32 inches equilateral triangle placement
+M-Audio M-Track 2x2 volume knob at 50%
+computer audio to 100%
+
+volume pots set at 7.5
+approx 79.0 dB using -20dBfs pink noise wav file with approx 33 inches equilateral triangle placement
+M-Audio M-Track 2x2 volume knob at 9 o'clock
+computer audio to 100%

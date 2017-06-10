@@ -13,3 +13,4 @@ export PS1="[${GREEN}\u${RESET}@${YELLOW}\h${RESET} \W]\$ "
 #PS1='[\u@\h \W]\$ '
 PATH=$PATH:~/.gem/ruby/2.1.0/bin/:~/Scripts/
 export QUOTING_STYLE=literal
+(wal -r &)
