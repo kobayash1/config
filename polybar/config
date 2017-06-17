@@ -8,17 +8,15 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
 background = #99000000
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
+background-alt = #99000000
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+primary = #dfdfdf
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -37,23 +35,25 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = fixed:pixelsize=10;1
+;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
-font-1 = Noto Sans CJK TC,Noto Sans CJK TC Thin:pixelsize=10;1
-font-2 = FontAwesome:pixelsize=10;1
+font-0 = Hack:size=10;1
+font-1 = Noto Sans CJK TC,Noto Sans CJK TC Thin:size=10;1
+font-2 = FontAwesome:size=10;1
+font-3 = Ionicons:size=12;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = ip cpu memory date 
+modules-right = archupdates wlan cpu actualtemp memory weather datecal redshift
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 tray-transparent = true
 ;tray-background = #0063ff
 
@@ -68,6 +68,7 @@ tray-transparent = true
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 locale = en_US.UTF-8
+enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -134,7 +135,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${module/bspwm.label-focused-background}
-;label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -154,18 +155,20 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  
-;the line below was included after <label-song> in default example config
-;<icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <icon-prev><label-song><icon-next>  
 
-icon-prev = 
+label-song = %{A1:mpc toggle:}%artist% - %title%%{A}
+icon-prev = 
 icon-stop = 
 icon-play = 
 icon-pause = 
-icon-next = 
+icon-next = 
 
 label-song-maxlen = 100
 label-song-ellipsis = true
+label-song-padding = 1
+icon-prev-padding = 2
+icon-next-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -192,27 +195,23 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #f90000
+format-prefix = " "
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-;format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #4bffdc
+format-prefix = " "
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
 interface = wlp6s0
-interval = 3.0
+interval = 60
 
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %local_ip%
+format-connected-prefix = " "
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -230,7 +229,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = eno1
-interval = 3.0
+interval = 60
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -247,17 +246,22 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = 
+date = ""
 date-alt = "%a %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M
 
-;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
 
 label = %date% %time%
+
+[module/datecal]
+type = custom/script
+interval = 5
+exec = "date | awk '{ print $4 }' | rev | cut -c 4- | rev"
+format-prefix = " "
+format = %{A1:gsimplecal:}<label>%{A}
 
 [module/volume]
 type = internal/volume
@@ -319,19 +323,19 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format = <label>
+;format-underline = #f50a4d
+;format-warn = <ramp> <label-warn>
+;format-warn-underline = ${self.format-underline}
 
 label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+;label-warn = %temperature%
+;label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+;ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -339,11 +343,11 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+;label-open-foreground = ${colors.secondary}
 label-close = cancel
-label-close-foreground = ${colors.secondary}
+;label-close-foreground = ${colors.secondary}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+;label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -364,7 +368,49 @@ menu-2-1-exec = menu-open-0
 type = custom/script
 format = <label>
 interval = 3600.0
-exec = "/home/kobayashi/Scripts/getip wlp6s0"
+exec = "~/.config/polybar/getip.sh wlp6s0"
+
+[module/actualtemp]
+type = custom/script
+format-prefix = " "
+format = <label>°C
+interval = 2
+exec = "cat /sys/devices/platform/coretemp.0/hwmon/hwmon?/temp1_input | rev | cut -c 4- | rev"
+
+[module/coretemps]
+type = custom/script
+format-prefix = " "
+label= %output%°C
+interval = 2
+exec = cat /sys/devices/platform/coretemp.0/hwmon/hwmon?/temp1_input | rev | cut -c 4- | rev
+click-left = cat /sys/devices/platform/coretemp.0/hwmon/hwmon?/temp?_input | rev | cut -c 4- | rev | tr '\n' ' ' | cut -d' ' -f2-5
+
+[module/coretemp]
+type = custom/script
+format-prefix = " "
+format = <label>°C
+foo = <label>°C
+exec = cat /sys/devices/platform/coretemp.0/hwmon/hwmon?/temp1_input | rev | cut -c 4- | rev | tr '\n' ' '
+
+[module/weather]
+type = custom/script
+interval = 60
+format = <label>
+format-prefix = " "
+exec = ~/.config/polybar/weather
+
+[module/redshift]
+type = custom/script
+interval = 10
+exec = ~/.config/polybar/redshift.sh
+
+[module/archupdates]
+type = custom/script
+interval = 3600
+format-prefix = " "
+format = <label>
+label = %output%
+exec = sleep 2 && checkupdates | wc -l
 
 [settings]
 screenchange-reload = true
