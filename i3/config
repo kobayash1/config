@@ -17,7 +17,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Hack 10
+#font pango:DejaVu Sans Mono 10
 #font pango:NotoSansCJK-Thin 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -157,11 +158,11 @@ bindsym $mod+r mode "resize"
 #}
 
 # gaps
-gaps inner 20
-gaps outer 20
+gaps inner 10
+gaps outer 10
 smart_borders on
 smart_gaps on
-for_window [class="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
 
 # Chromium
 bindsym $mod+c exec chromium
@@ -173,12 +174,29 @@ bindsym --release Print exec scrot 'Screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec scrot -s 'Screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/Screenshots && mv $f ~/Pictures/Screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/`ls -1 -t ~/Pictures/Screenshots | head -1`' # Area selection
 
 # Set wallpaper
-exec --no-startup-id "feh ~/Pictures/Wallpapers/alena-aenami-over-the-city1k.jpg"
+exec --no-startup-id "feh --bg-fill ~/Pictures/Wallpapers/alena-aenami-over-the-city1k.jpg"
 
 # Use compton
 exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
 
 # Use rofi
 # bindsym $mod+d exec rofi -show run -lines 5 -width 100 -padding 300 -fullscreen -opacity "85" -font "Roboto 50" -separator-style "none"
+
 # Use polybar
 exec_always --no-startup-id /home/kobayashi/.config/polybar/launch.sh
+
+# xbindkeys
+exec_always --no-startup-id xbindkeys
+
+# Use redshift
+exec --no-startup-id "redshift -l 41.97959:-87.90446"
+
+# Remove titlebar
+new_window pixel 3
+
+# Focus does not follow mouse
+focus_follows_mouse no
+
+# Scratchpad
+bindsym $mod+Shift+z move scratchpad
+bindsym $mod+z scratchpad show
