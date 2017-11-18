@@ -1,0 +1,6 @@
+#!/bin/bash
+find ~/Music/K-Pop -type f -printf '%T+\t%p\n' | sort | tail -$1 | cut -c54- > ~/temp.txt
+awk '{print "/<microSD1>/" $0}' ~/temp.txt > ~/newkpop$1.m3u8
+chmod 755 ~/newkpop$1.m3u8
+rm -f ~/temp.txt
+echo "New playlist newkpop$1.m3u8 created.  Copy to your Playlists folder."
