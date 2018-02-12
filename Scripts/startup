@@ -1,7 +1,0 @@
-#!/bin/bash
-xbindkeys &
-nvidia-settings --assign CurrentMetaMode="DVI-D-0: nvidia-auto-select +0+0 {ForceFullCompositionPipeline = On}" &
-yakuake
-sleep 20 &&
-checkip &
-conky 2> /dev/null

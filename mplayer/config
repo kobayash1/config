@@ -1,8 +1,0 @@
-# Write your default config options here!
-
-
-ass=yes
-nolirc=yes
-quiet=yes
-vf=screenshot
-fs=yes
