@@ -1,5 +1,0 @@
-move to /usr/share/fonts/TTF
-
-then
-
-sudo fc-cache -fv

@@ -1,3 +1,0 @@
-# tic -x termite.terminfo
-
-This will prevent errors when ssh'ing to a remote while using termite on the local host.
