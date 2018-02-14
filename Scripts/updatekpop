@@ -1,7 +1,0 @@
-#!/bin/bash
-mpc clear &&
-mpc update --wait 
-mpc ls K-Pop/ | mpc add &&
-mpc shuffle &&
-mpc rm kpop &&
-mpc save kpop 

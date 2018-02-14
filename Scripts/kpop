@@ -1,1 +1,0 @@
-mpv -playlist <(find /home/kobayashi/Music/K-Pop/ -type f | sort -R)

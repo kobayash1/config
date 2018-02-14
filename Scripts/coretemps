@@ -1,6 +1,0 @@
-#!/bin/bash
-while :
-do
-	cat /sys/devices/platform/coretemp.0/hwmon/hwmon?/temp?_input | rev | cut -c 4- | rev | tr '\n' ' '
-	sleep 2 
-done

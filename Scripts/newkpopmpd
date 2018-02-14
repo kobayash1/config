@@ -1,6 +1,0 @@
-#!/bin/bash
-mpc stop
-find ~/Music/K-Pop/ -type f -printf "%T+\t%p\n" | sort | tail -$1 | cut -c 32- > ~/.config/mpd/playlists/newkpop.m3u
-mpc clear
-mpc load newkpop
-mpc shuffle

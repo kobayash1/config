@@ -1,4 +1,0 @@
-#!/bin/bash
-#  Run this command after updating pacman mirrorlist
-sudo mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist &&
-sudo reflector --verbose --country 'United States' -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist

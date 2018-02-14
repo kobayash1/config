@@ -1,2 +1,0 @@
-#!/bin/bash
-cat ~/git_stuff/github_pass | xclip -selection clipboard &
