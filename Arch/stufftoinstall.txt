@@ -37,3 +37,4 @@ xbindkeys
 xf86-video-nouveau 
 xorg-xinit 
 yaourt 
+gsimplecal
