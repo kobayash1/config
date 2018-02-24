@@ -38,3 +38,7 @@ xf86-video-nouveau
 xorg-xinit 
 yaourt 
 gsimplecal
+rofi
+xsel
+xdotool
+noto-fonts-emoji
