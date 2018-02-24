@@ -45,3 +45,4 @@ noto-fonts-emoji
 betterlockscreen
 scrot
 xclip
+dunst
