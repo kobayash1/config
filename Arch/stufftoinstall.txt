@@ -46,3 +46,4 @@ betterlockscreen
 scrot
 xclip
 dunst
+mpdcron-git
