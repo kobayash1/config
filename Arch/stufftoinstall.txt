@@ -42,3 +42,4 @@ rofi
 xsel
 xdotool
 noto-fonts-emoji
+betterlockscreen
